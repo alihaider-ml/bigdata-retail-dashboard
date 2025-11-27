@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>In-Store Shopping Experience</title>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+<style>
+/* Global Dark Theme */
+body {
+  margin: 0;
+  font-family: 'Roboto', sans-serif;
+  background: #121212;
+  color: #e0e0e0;
+  scroll-behavior: smooth;
+}
+a { color: #ff9800; text-decoration: none; }
+a:hover { text-decoration: underline; }
+section { padding: 4rem 2rem; }
+
+/* Landing Section */
+#landing {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
+  color: #fff;
+}
+#landing h1 {
+  font-size: 4rem;
+  margin-bottom: 1rem;
+}
+#landing p {
+  font-size: 1.5rem;
+  opacity: 0.8;
+  margin-bottom: 2rem;
+}
+#landing .btn {
+  background: #ff9800;
+  color: #121212;
+  padding: 0.8rem 1.5rem;
+  border-radius: 12px;
+  font-weight: 500;
+  font-size: 1.1rem;
+  transition: 0.3s;
+}
+#landing .btn:hover { background: #e65100; }
+
+/* Container for detailed content */
+.container {
+  width: 90%;
+  max-width: 1300px;
+  margin: auto;
+}
+
+/* Section Styling */
+section.content-section {
+  background: #1e1e1e;
+  border-radius: 20px;
+  margin-bottom: 3rem;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
+}
+section h2 {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  color: #ff9800;
+  margin-bottom: 1rem;
+  font-size: 2rem;
+}
+section h3 {
+  color: #00bcd4;
+  margin: 1rem 0 0.5rem;
+}
+ul { margin-left: 1.5rem; list-style-type: disc; }
+
+/* Cards */
+.card-container { display: flex; flex-wrap: wrap; gap: 1rem; margin-top: 1rem; }
+.card {
+  flex: 1 1 300px;
+  background: linear-gradient(145deg, #333, #222);
+  padding: 1.5rem;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.6);
+  transition: transform 0.3s, box-shadow 0.3s;
+}
+.card:hover { transform: translateY(-10px); box-shadow: 0 15px 30px rgba(0,0,0,0.8); }
+.card h3 { margin-bottom: 0.8rem; }
+.card p { font-size: 0.95rem; opacity: 0.8; }
+.btn-small { display: inline-block; margin-top: 1rem; background: #ff9800; padding: 0.5rem 1rem; border-radius: 12px; font-weight: 500; transition: 0.3s; }
+.btn-small:hover { background: #e65100; }
+
+/* Accordion */
+.accordion { background-color: #2a2a2a; border-radius: 12px; margin-bottom: 1rem; overflow: hidden; }
+.accordion-header {
+  padding: 1rem 1.5rem;
+  cursor: pointer;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-weight: 500;
+  color: #ff9800;
+  transition: background 0.3s;
+}
+.accordion-header:hover { background: #3a3a3a; }
+.accordion-body {
+  padding: 1rem 1.5rem;
+  display: none;
+  color: #ccc;
+  border-top: 1px solid #444;
+  background: #1e1e1e;
+}
+
+/* Footer */
+footer { text-align: center; padding: 1.5rem 0; background: #0f2027; color: #fff; border-radius: 20px; margin-top: 2rem; }
+
+/* Fade-in Animation */
+.fade-in { opacity: 0; transform: translateY(30px); transition: all 0.8s ease-out; }
+.fade-in.visible { opacity: 1; transform: translateY(0); }
+</style>
+</head>
+<body>
+
+<!-- Landing Section -->
+<section id="landing">
+  <h1><i class="fas fa-shopping-cart"></i> In-Store Shopping Experience</h1>
+  <p>Uncovering customer behavior with Big Data Analytics</p>
+  <a href="#content" class="btn">Explore the Project</a>
+</section>
+
+<!-- Detailed Content -->
+<div id="content" class="container">
+
+  <!-- Phase 1: Problem -->
+  <section class="content-section fade-in">
+    <h2><i class="fas fa-bullseye"></i> Phase 1: Problem Identification</h2>
+    <h3>Business Problem</h3>
+    <ul>
+      <li>Data from apps, stores, and POS is siloed.</li>
+      <li>Retailers can't answer questions about customer paths or high-traffic zones.</li>
+      <li>Decisions remain reactive, missing opportunities.</li>
+    </ul>
+    <h3>Proposed Solution</h3>
+    <ul>
+      <li>Integrate <strong>mobile app</strong>, <strong>geolocation</strong>, and <strong>transaction data</strong>.</li>
+      <li>Build a unified behavioral model.</li>
+      <li>Optimize store layout and product placement.</li>
+    </ul>
+  </section>
+
+  <!-- Data Sources -->
+  <section class="content-section fade-in">
+    <h2><i class="fas fa-database"></i> Data Sources</h2>
+    <div class="card-container">
+      <div class="card">
+        <h3><i class="fas fa-mobile-alt"></i> Mobile App Data</h3>
+        <p>12M+ sessions, 220M+ events. Tracks clicks, views, cart events.</p>
+        <a href="https://github.com/otto-de/recsys-dataset" class="btn-small" target="_blank">View Dataset</a>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-receipt"></i> Transaction Data</h3>
+        <p>1M+ transactions. Invoice, product, quantity, price, country.</p>
+        <a href="https://archive-beta.ics.uci.edu/dataset/502/online%2Bretail%2Bii" class="btn-small" target="_blank">View Dataset</a>
+      </div>
+      <div class="card">
+        <h3><i class="fas fa-map-marker-alt"></i> Geolocation Data</h3>
+        <p>92 days of indoor trajectories. Enables heatmaps, dwell-time analysis.</p>
+        <a href="https://dil.atr.jp/crest2010_HRI/ATC_dataset/" class="btn-small" target="_blank">View Dataset</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Pipeline -->
+  <section class="content-section fade-in">
+    <h2><i class="fas fa-cogs"></i> Phase 2: Pipeline Design</h2>
+    <div class="accordion">
+      <div class="accordion-header"><span>Step 1: Data Collection</span><i class="fas fa-chevron-down"></i></div>
+      <div class="accordion-body">
+        <p>Batch ingest mobile app, transaction, and geolocation datasets.</p>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-header"><span>Step 2: Data Cleaning</span><i class="fas fa-chevron-down"></i></div>
+      <div class="accordion-body">
+        <p>Remove invalid records, normalize timestamps, smooth trajectories, encode fields.</p>
+      </div>
+    </div>
+    <div class="accordion">
+      <div class="accordion-header"><span>Step 3: Data Integration</span><i class="fas fa-chevron-down"></i></div>
+      <div class="accordion-body">
+        <p>Align users across datasets temporally and spatially to create unified customer journey data.</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- Conclusion -->
+  <section class="content-section fade-in">
+    <h2><i class="fas fa-check-circle"></i> Conclusion</h2>
+    <ul>
+      <li>Optimized store layouts</li>
+      <li>Data-driven product placement</li>
+      <li>Targeted promotions & personalized engagement</li>
+      <li>Predictive insights for purchase likelihood & hot zones</li>
+    </ul>
+  </section>
+
+</div>
+
+<footer>
+  <p>&copy; 2025 Ali Haider & Tanzeel Iqbal | Big Data Analytics Case Study</p>
+</footer>
+
+<script>
+// Accordion functionality
+const accordions = document.querySelectorAll('.accordion-header');
+accordions.forEach(acc => {
+  acc.addEventListener('click', () => {
+    const body = acc.nextElementSibling;
+    const icon = acc.querySelector('i');
+    body.style.display = body.style.display === 'block' ? 'none' : 'block';
+    icon.classList.toggle('fa-chevron-down');
+    icon.classList.toggle('fa-chevron-up');
+  });
+});
+
+// Fade-in animation
+const faders = document.querySelectorAll('.fade-in');
+const appearOptions = { threshold: 0.2, rootMargin: "0px 0px -50px 0px" };
+const appearOnScroll = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){ entry.target.classList.add('visible'); observer.unobserve(entry.target);}
+  });
+}, appearOptions);
+faders.forEach(fader => { appearOnScroll.observe(fader); });
+</script>
+
+</body>
+</html>
